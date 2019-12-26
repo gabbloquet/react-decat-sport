@@ -1,25 +1,49 @@
 import React, { useState, useEffect } from 'react';
-import CoordinateSelector from '../CoordinateSelector';
-import {feedSports} from '../services/sports-api-decathlon/index'
+import LocationResearch from '../LocationResearch';
+import {feedSports} from '../services/decathlon-sports-api'
+import {loadLocationInformations, locationDataToCoodinates} from '../services/google-maps-api'
 import {Main, Table, Title} from '../utils/styles/components';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState();
-  const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
+  const [coordinates, setCoordinates] = useState({ lat: 0, lng: 0 });
   const [sports, setSports] = useState([]);
+  const [location, setLocation] = useState("Lille");
 
   useEffect(()  => {
-    setIsLoading(true);
-    feedSports(coordinates).then(sports => {
-      setSports(sports);
-      setIsLoading(false);
-    });
+    if(coordinates && coordinates.lat !== 0 && coordinates.lng !== 0) {
+      setIsLoading(true);
+      feedSports(coordinates).then(sports => {
+        setSports(sports);
+        setIsLoading(false);
+      });
+    }
   }, [coordinates]);
+
+  useEffect( () => {
+    setIsLoading(true);
+    loadLocationInformations(location)
+      .then( locationData => {
+          const coordinates = locationDataToCoodinates(locationData);
+          feedSports(coordinates).then(sports => {
+            setSports(sports);
+            setIsLoading(false);
+          });
+        }
+      )
+  },[location]);
 
   return (
     <Main>
-      <Title>Decathlon Sport Location</Title>
-      <CoordinateSelector value={coordinates} onChange={setCoordinates}/>
+      <div>
+        <img src="https://www.decathlon.fr/assets/images/decathlon-logo.svg" alt="Decathlon magasin de sport"/>
+        <Title>Sport Location API</Title>
+      </div>
+      <LocationResearch
+        coordinates={coordinates}
+        onCoordinatesChange={setCoordinates}
+        location={location}
+        onLocationChange={setLocation}/>
       {!isLoading ? (<Table>
       <thead>
         <tr>

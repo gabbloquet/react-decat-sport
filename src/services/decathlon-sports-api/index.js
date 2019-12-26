@@ -5,7 +5,7 @@ const loadSportsInformations = coordinates => {
     {
       baseUrl : 'https://sports.api.decathlon.com',
       apiEndpoint : '/sports/recommendations/geolocation',
-      queryParams : { coordinates: coordinates.x + ',' + coordinates.y }
+      queryParams : { coordinates: coordinates.lat + ',' + coordinates.lng }
     }
   );
 

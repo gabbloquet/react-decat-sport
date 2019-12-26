@@ -2,23 +2,25 @@ import styled from "styled-components";
 import { FONTSIZES, SIZES, EFFECTS, COLORS, fontFamily } from './assets';
 
 const Title = styled.h1`
-    padding: 0.5em 0 0 0;
-    margin: 0;
+  padding: 0.5em 0 0 0;
+  margin: 0;
+  color: ${COLORS.WHITE};
+  background-color: ${COLORS.BLUE};
 `;
 
 const Main = styled.div`
   display: flex;
   justify-content: center;
-  color: ${COLORS.WHITE};
-  background-color: ${COLORS.BLUE};
+  color: ${COLORS.BLACK_80};
+  background-color: ${COLORS.WHITE};
 `;
 
 const Form = styled.form`
-  color: white;
+  color: ${COLORS.BLACK_20};
   padding: 1em;
   display: flex;
-  align-items: start;
-  justify-content: center;
+  justify-content: space-evenly;
+  width: 100%;
 `;
 
 const Label = styled.label`
@@ -99,7 +101,20 @@ const ButtonBlue = styled(Button)`
 `;
 
 const Table = styled.table`
-  background-color: ${COLORS.BLUE_DARK};
+  background-color: ${COLORS.BLUE};
 `;
 
-export {Button, ButtonBlue, ButtonYellow, Input, Form, Label, Main, Table, Title};
+const LocationCard = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-content: start;
+`;
+
+const Section = styled.h1`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2em;
+`;
+
+export {Button, ButtonBlue, ButtonYellow, Input, Form, Label, LocationCard, Main, Table, Section, Title};
