@@ -1,4 +1,4 @@
-import urlConstructor from "../../utils/helper";
+import urlConstructor from "../../utils/api-calls/helper";
 
 const loadSportsInformations = coordinates => {
   const url = urlConstructor(
@@ -12,4 +12,21 @@ const loadSportsInformations = coordinates => {
   return fetch(url).then(response => response.json());
 };
 
-export default loadSportsInformations;
+const feedSports = coordinates => {
+  return loadSportsInformations(coordinates)
+    .then(data => {
+      if(data.length > 0) {
+        let tmp = data
+          .map((line) => (
+              {
+                id: line.id,
+                name: line.attributes.name
+              }
+            )
+          );
+        return tmp;
+      }
+    });
+};
+
+export {feedSports, loadSportsInformations};

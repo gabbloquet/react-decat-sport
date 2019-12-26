@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Button, Input, Form, Label} from './style';
+import {ButtonYellow, Input, Form, Label} from '../utils/components';
 
 const CoordinateSelector = ({ value, onChange }) => {
   const [newValue, setNewValue] = useState(value);
@@ -7,7 +7,7 @@ const CoordinateSelector = ({ value, onChange }) => {
   const handleSubmit = event => {
     onChange(newValue);
     event.preventDefault();
-  }
+  };
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -19,7 +19,7 @@ const CoordinateSelector = ({ value, onChange }) => {
         Y:
         <Input type="text" value={newValue.y} onChange={e => setNewValue({ ...newValue, y: e.target.value })} />
       </Label>
-      <Button type="submit">Submit</Button>
+      <ButtonYellow type="submit">Submit</ButtonYellow>
     </Form>
   );
 };
