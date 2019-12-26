@@ -4,8 +4,8 @@ import { FONTSIZES, SIZES, EFFECTS, COLORS, fontFamily } from './assets';
 const Title = styled.h1`
   padding: 0.5em 0 0 0;
   margin: 0;
-  color: ${COLORS.WHITE};
-  background-color: ${COLORS.BLUE};
+  color: ${COLORS.BLUE};
+  ${fontFamily};
 `;
 
 const Main = styled.div`
@@ -13,6 +13,7 @@ const Main = styled.div`
   justify-content: center;
   color: ${COLORS.BLACK_80};
   background-color: ${COLORS.WHITE};
+  ${fontFamily};
 `;
 
 const Form = styled.form`
@@ -21,6 +22,7 @@ const Form = styled.form`
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+  ${fontFamily};
 `;
 
 const Label = styled.label`
@@ -30,6 +32,7 @@ const Label = styled.label`
   font-style: italic;
   display: flex;
   align-items: center;
+  ${fontFamily};
 `;
 
 const Input = styled.input`
@@ -48,6 +51,7 @@ const Input = styled.input`
   text-transform: uppercase;
   color: #575859;
   margin-left: 0.5em;
+  ${fontFamily};
 `;
 
 const Button = styled.button`
@@ -101,13 +105,17 @@ const ButtonBlue = styled(Button)`
 `;
 
 const Table = styled.table`
-  background-color: ${COLORS.BLUE};
+  background-color: ${COLORS.BLUE_DARK};
+  color: ${COLORS.WHITE};
+  width: 35%;
+  ${fontFamily};
 `;
 
 const LocationCard = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-content: start;
+  ${fontFamily};
 `;
 
 const Section = styled.h1`
@@ -115,6 +123,7 @@ const Section = styled.h1`
   justify-content: center;
   width: 100%;
   margin-top: 2em;
+  ${fontFamily};
 `;
 
 export {Button, ButtonBlue, ButtonYellow, Input, Form, Label, LocationCard, Main, Table, Section, Title};

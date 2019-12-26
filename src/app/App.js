@@ -37,7 +37,7 @@ const App = () => {
     <Main>
       <div>
         <img src="https://www.decathlon.fr/assets/images/decathlon-logo.svg" alt="Decathlon magasin de sport"/>
-        <Title>Sport Location API</Title>
+        <Title>Which sports could be worth to invest in my city ?</Title>
       </div>
       <LocationResearch
         coordinates={coordinates}
