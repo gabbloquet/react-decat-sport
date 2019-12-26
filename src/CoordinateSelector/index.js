@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {ButtonYellow, Input, Form, Label} from '../utils/components';
+import {ButtonYellow, Input, Form, Label} from '../utils/styles/components';
 
 const CoordinateSelector = ({ value, onChange }) => {
   const [newValue, setNewValue] = useState(value);
@@ -12,11 +12,11 @@ const CoordinateSelector = ({ value, onChange }) => {
   return (
     <Form onSubmit={handleSubmit}>
       <Label>
-        X:
+        X
         <Input type="text" value={newValue.x} onChange={e => setNewValue({ ...newValue, x: e.target.value })}/>
       </Label>
       <Label>
-        Y:
+        Y
         <Input type="text" value={newValue.y} onChange={e => setNewValue({ ...newValue, y: e.target.value })} />
       </Label>
       <ButtonYellow type="submit">Submit</ButtonYellow>

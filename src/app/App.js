@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CoordinateSelector from '../CoordinateSelector';
 import {feedSports} from '../services/sports-api-decathlon/index'
+import {Main, Table, Title} from '../utils/styles/components';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState();
@@ -16,30 +17,31 @@ const App = () => {
   }, [coordinates]);
 
   return (
-    <React.Fragment>
-      <h1>Arras Decathlon Sport</h1>
+    <Main>
+      <Title>Decathlon Sport Location</Title>
       <CoordinateSelector value={coordinates} onChange={setCoordinates}/>
-      {!isLoading ? (<table>
+      {!isLoading ? (<Table>
       <thead>
         <tr>
-
+          <th>Ranking</th>
           <th> Sport </th>
         </tr>
       </thead>
-        <tbody>
-      {
-        sports.map(sport => (
-            <tr key={sport.name}>
-              <td>{sport.name}</td>
-            </tr>
+      <tbody>
+        {
+          sports.map((sport, index) => (
+              <tr key={sport.name}>
+                <td>{index + 1}</td>
+                <td>{sport.name}</td>
+              </tr>
+            )
           )
-        )
-      }
-        </tbody>
-      </table>) :
+        }
+      </tbody>
+      </Table>) :
         'Loading...'
       }
-    </React.Fragment>
+    </Main>
   );
 
 

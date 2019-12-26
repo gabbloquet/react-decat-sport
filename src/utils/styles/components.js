@@ -1,12 +1,23 @@
 import styled from "styled-components";
 import { FONTSIZES, SIZES, EFFECTS, COLORS, fontFamily } from './assets';
 
+const Title = styled.h1`
+    padding: 0.5em 0 0 0;
+    margin: 0;
+`;
+
+const Main = styled.div`
+  display: flex;
+  justify-content: center;
+  color: ${COLORS.WHITE};
+  background-color: ${COLORS.BLUE};
+`;
+
 const Form = styled.form`
-  background-color: #0082C3;
   color: white;
   padding: 1em;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
 `;
 
@@ -15,6 +26,8 @@ const Label = styled.label`
   font-family: Roboto-condensed;
   font-weight: 700;
   font-style: italic;
+  display: flex;
+  align-items: center;
 `;
 
 const Input = styled.input`
@@ -32,6 +45,7 @@ const Input = styled.input`
   font-size: 1.5rem;
   text-transform: uppercase;
   color: #575859;
+  margin-left: 0.5em;
 `;
 
 const Button = styled.button`
@@ -84,4 +98,8 @@ const ButtonBlue = styled(Button)`
   }
 `;
 
-export {Button, ButtonBlue, ButtonYellow, Input, Form, Label};
+const Table = styled.table`
+  background-color: ${COLORS.BLUE_DARK};
+`;
+
+export {Button, ButtonBlue, ButtonYellow, Input, Form, Label, Main, Table, Title};
