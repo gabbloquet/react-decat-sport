@@ -1,27 +1,25 @@
 import React from "react";
-import {Table} from "../utils/styles/components";
+import {Cellule, SportLink, SportMiniature, Menu} from "../utils/styles/components";
 
 const SportsMenu =  ({sports}) => {
+
+  function handleOpen(event) {
+    event.persist();
+    console.log(event)
+  }
+
   return (
-    <Table>
-      <thead>
-      <tr>
-        <th>Ranking</th>
-        <th>Sport</th>
-      </tr>
-      </thead>
-      <tbody>
+    <Menu>
       {
-        sports.map((sport, index) => (
-            <tr key={sport.name}>
-              <td>{index + 1}</td>
-              <td>{sport.name}</td>
-            </tr>
+        sports.map((sport, key) => (
+              <Cellule key={key} value={sport} onClick={handleOpen}>
+                <SportMiniature src={sport.icon}/>
+                <SportLink value={sport} >{key + 1} : {sport.name}</SportLink>
+              </Cellule>
           )
         )
       }
-      </tbody>
-    </Table>
+    </Menu>
   )
 };
 

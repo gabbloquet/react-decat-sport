@@ -20,10 +20,14 @@ const feedSports = coordinates => {
           .map((line) => (
               {
                 id: line.id,
-                name: line.attributes.name
+                name: line.attributes.name,
+                description: line.attributes.description,
+                icon: line.attributes.icon,
+                childrens: line.relationships.children
               }
             )
           );
+        console.log(tmp)
         return tmp;
       }
     });

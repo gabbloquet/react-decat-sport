@@ -104,11 +104,9 @@ const ButtonBlue = styled(Button)`
   }
 `;
 
-const Table = styled.table`
-  background-color: ${COLORS.BLUE_DARK};
-  color: ${COLORS.WHITE};
-  width: 35%;
+const Menu = styled.div`
   ${fontFamily};
+  width: 35%;
 `;
 
 const LocationCard = styled.div`
@@ -126,4 +124,41 @@ const Section = styled.h1`
   ${fontFamily};
 `;
 
-export {Button, ButtonBlue, ButtonYellow, Input, Form, Label, LocationCard, Main, Table, Section, Title};
+const Cellule = styled.a`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-left:1em;
+  cursor: pointer;
+  background: ${COLORS.GREY_MEDIUM};
+  :hover {
+    background-color: ${COLORS.WHITE};
+  }
+`;
+
+const SportMiniature = styled.img`
+  height: 3rem;
+`;
+
+const SportLink = styled.div`
+  content: "E007";
+  background-color: transparent;
+  color: ${COLORS.BLUE_DARK};
+`;
+
+export {
+  Button,
+  ButtonBlue,
+  ButtonYellow,
+  Cellule,
+  Input,
+  Form,
+  Label,
+  LocationCard,
+  Main,
+  Menu,
+  Section,
+  SportLink,
+  SportMiniature,
+  Title
+};
