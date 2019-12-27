@@ -12,6 +12,18 @@ const loadSportsInformations = coordinates => {
   return fetch(url).then(response => response.json());
 };
 
+const loadSportInformation = sportId => {
+  const url = urlConstructor(
+    {
+      baseUrl : 'https://sports.api.decathlon.com',
+      apiEndpoint : '/sports/' + sportId,
+      queryParams : { }
+    }
+  );
+
+  return fetch(url).then(response => response.json());
+};
+
 const feedSports = coordinates => {
   return loadSportsInformations(coordinates)
     .then(data => {
@@ -33,4 +45,4 @@ const feedSports = coordinates => {
     });
 };
 
-export {feedSports, loadSportsInformations};
+export {feedSports, loadSportInformation, loadSportsInformations};

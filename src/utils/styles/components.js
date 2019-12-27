@@ -124,12 +124,13 @@ const Section = styled.h1`
   ${fontFamily};
 `;
 
-const Cellule = styled.a`
+const Cellule = styled.button`
   display: flex;
   align-items: center;
   width: 100%;
   margin-left:1em;
   cursor: pointer;
+  border: 0;
   background: ${COLORS.GREY_MEDIUM};
   :hover {
     background-color: ${COLORS.WHITE};
@@ -146,17 +147,45 @@ const SportLink = styled.div`
   color: ${COLORS.BLUE_DARK};
 `;
 
+const ReturnButton = styled(ButtonBlue)`
+  width: 100%;
+  height: 2em;
+  padding: 0;
+  padding-right: 1em;
+  flex-direction: row-reverse;
+`;
+
+const ReturnArrow = styled.i`
+    border: solid ${COLORS.GREY_MID};
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    vertical-align: middle;
+`;
+
+const LeftArrow = styled(ReturnArrow)`
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+`;
+
+const RightArrow = styled(ReturnArrow)`
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+`;
+
 export {
   Button,
   ButtonBlue,
-  ButtonYellow,
   Cellule,
   Input,
   Form,
   Label,
+  LeftArrow,
   LocationCard,
   Main,
   Menu,
+  ReturnButton,
+  RightArrow,
   Section,
   SportLink,
   SportMiniature,
