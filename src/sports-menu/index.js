@@ -6,16 +6,27 @@ const SportsMenu = ({sports}) => {
   const [selectedSport, setSelectedSport] = useState();
 
   function selectSport(sport) {
-    sport.childrens.map(
-      (associatedSport, key) => (
-          loadSportInformation(associatedSport.data.id)
-            .then(response =>
-              sports.childrens[key].name = response["data"]["attributes"].name
-            )
-      )
-    );
-    console.log(sport)
+    if(sport.childrens.length > 0) {
+
+      var tmpAssociatedSports = [];
+
+      sport.childrens.map(
+        (associatedSport, key) => (
+            loadSportInformation(associatedSport.data.id)
+              .then(response =>
+                tmpAssociatedSports[key] = response["data"]["attributes"].name
+              )
+        )
+      );
+
+      sport.associatedSports = tmpAssociatedSports;
+
+    } else {
+      sport.associatedSports = [];
+    }
+
     setSelectedSport(sport);
+    console.log(sport);
   }
 
   function deselectSport() {
@@ -48,12 +59,14 @@ const SportsMenu = ({sports}) => {
         <SportMiniature src={selectedSport.icon}/>
         <p>{selectedSport.description}</p>
         <h2>Sports associés</h2>
+        <ul>
         {
-          selectedSport.childrens.map((associatedSport, key) => (
-              <p key={key} >{associatedSport.name}</p>
+          selectedSport.associatedSports.map((associatedSport) => (
+              <li>{associatedSport}</li>
             )
           )
         }
+        </ul>
       </Menu>
     )
   )
