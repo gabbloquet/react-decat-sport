@@ -8,10 +8,10 @@ const SportsMenu = ({sports}) => {
   function selectSport(sport) {
     sport.childrens.map(
       (associatedSport, key) => (
-        console.log(
           loadSportInformation(associatedSport.data.id)
-            .then(response => response["data"]["attributes"].name)
-        )
+            .then(response =>
+              sports.childrens[key].name = response["data"]["attributes"].name
+            )
       )
     );
     console.log(sport)
