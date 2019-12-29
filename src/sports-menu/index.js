@@ -14,7 +14,7 @@ const SportsMenu = ({sports}) => {
         (associatedSport, key) => (
             loadSportInformation(associatedSport.data.id)
               .then(response =>
-                tmpAssociatedSports[key] = response["data"]["attributes"].name
+                sport.childrens[key].data.name = response["data"]["attributes"].name
               )
         )
       );
@@ -26,7 +26,6 @@ const SportsMenu = ({sports}) => {
     }
 
     setSelectedSport(sport);
-    console.log(sport);
   }
 
   function deselectSport() {
@@ -61,8 +60,10 @@ const SportsMenu = ({sports}) => {
         <h2>Sports associés</h2>
         <ul>
         {
-          selectedSport.associatedSports.map((associatedSport) => (
-              <li>{associatedSport}</li>
+          selectedSport.childrens.map((associatedSport, key) => (
+              console.log(associatedSport)
+              // console.log(associatedSport.data.name)
+              // <li key={key}>{associatedSport.data.name}</li>
             )
           )
         }
