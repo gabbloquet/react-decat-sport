@@ -3,7 +3,7 @@ import LocationResearch from '../Location-research';
 import {feedSports} from '../services/decathlon-sports-api'
 import {loadLocationInformations, locationDataToCoodinates} from '../services/google-maps-api'
 import SportsMenu from '../sports-menu'
-import {Main, Title} from '../utils/styles/components';
+import {Main, SportMiniature, Title} from '../utils/styles/components';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState();
@@ -13,6 +13,7 @@ const App = () => {
   const [location, setLocation] = useState("Lille");
 
   useEffect(()  => {
+    setError(false);
     if(coordinates && coordinates.lat !== 0 && coordinates.lng !== 0) {
       setIsLoading(true);
       feedSports(coordinates)
@@ -20,22 +21,24 @@ const App = () => {
           setSports(sports);
           setIsLoading(false);
         })
-        .catch(
-          setError(true)
-        );
     }
   }, [coordinates]);
 
   useEffect( () => {
     setIsLoading(true);
+    setError(false);
     loadLocationInformations(location)
       .then( locationData => {
           if(locationData !== []) {
             const coordinates = locationDataToCoodinates(locationData);
-            feedSports(coordinates).then(sports => {
-              setSports(sports);
-              setIsLoading(false);
-            });
+            feedSports(coordinates)
+              .then(sports => {
+                if(sports && sports.length > 0)
+                  setSports(sports);
+                else
+                  setError(true);
+                setIsLoading(false);
+              })
           } else {
             setError(true);
           }
@@ -58,7 +61,14 @@ const App = () => {
 
       {!isLoading && !error ? (
         <SportsMenu sports={sports}/>
-      ) : error ? 'Impossible to find informations for this location ' : 'Loading...'
+      ) : error ?
+      (
+        <div>
+          <SportMiniature src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Warning_icon.svg/420px-Warning_icon.svg.png"/>
+          <p>Unable to find information from this sport for this location</p>
+        </div>
+      )
+      : 'Loading...'
       }
     </Main>
   );

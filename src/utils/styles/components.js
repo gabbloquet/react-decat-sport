@@ -139,6 +139,7 @@ const Cellule = styled.button`
 
 const SportMiniature = styled.img`
   height: 3rem;
+  width: 4em;
 `;
 
 const SportLink = styled.div`

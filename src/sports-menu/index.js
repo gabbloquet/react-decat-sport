@@ -4,28 +4,19 @@ import {loadSportInformation} from "../services/decathlon-sports-api"
 
 const SportsMenu = ({sports}) => {
   const [selectedSport, setSelectedSport] = useState();
+  const [children, setChildren] = useState([]);
 
   function selectSport(sport) {
     if(sport.childrens.length > 0) {
-
-      var tmpAssociatedSports = [];
-
-      sport.childrens.map(
-        (associatedSport, key) => (
-            loadSportInformation(associatedSport.data.id)
-              .then(response =>
-                sport.childrens[key].data.name = response["data"]["attributes"].name
-              )
-        )
-      );
-
-      sport.associatedSports = tmpAssociatedSports;
-
+      Promise.all(sport.childrens.map(child => loadSportInformation(child.data.id)))
+        .then(responses => {
+          setChildren(responses.map(({data: {attributes}}) => attributes));
+          setSelectedSport(sport);
+        });
     } else {
-      sport.associatedSports = [];
+      setChildren([]);
+      setSelectedSport(sport);
     }
-
-    setSelectedSport(sport);
   }
 
   function deselectSport() {
@@ -38,7 +29,8 @@ const SportsMenu = ({sports}) => {
         {
           sports.map((sport, key) => (
               <Cellule key={key} onClick={() => selectSport(sport)}>
-                <SportMiniature src={sport.icon}/>
+                <SportMiniature
+                  src={sport.icon ? sport.icon : 'https://toppng.com/uploads/preview/oint-interrogation-point-d-interrogation-115628635697ubaj1toa2.png'}/>
                 <SportLink>
                   {key + 1} : {sport.name}
                   <RightArrow/>
@@ -57,13 +49,11 @@ const SportsMenu = ({sports}) => {
         <h2>{selectedSport.name}</h2>
         <SportMiniature src={selectedSport.icon}/>
         <p>{selectedSport.description}</p>
-        <h2>Sports associés</h2>
+        <h2>Sports enfants : </h2>
         <ul>
         {
-          selectedSport.childrens.map((associatedSport, key) => (
-              console.log(associatedSport)
-              // console.log(associatedSport.data.name)
-              // <li key={key}>{associatedSport.data.name}</li>
+          children.map(child => (
+            <li key={child.slug}>{child.name}</li>
             )
           )
         }

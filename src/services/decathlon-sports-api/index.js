@@ -39,7 +39,6 @@ const feedSports = coordinates => {
               }
             )
           );
-        console.log(tmp)
         return tmp;
       }
     });
