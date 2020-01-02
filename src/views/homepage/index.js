@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import LocationResearch from '../../components/location-research';
 import {feedSports} from '../../services/decathlon-sports-api'
 import {loadLocationInformations, locationDataToCoodinates} from '../../services/google-maps-api'
-import SportsMenu from '../../components/sports-menu'
+import SportsRanking from '../../components/sports-ranking'
 import {Main, SportMiniature, Title} from '../../utils/styles/components';
 
 const Homepage = () => {
@@ -50,7 +50,7 @@ const Homepage = () => {
     <Main>
       <div>
         <img src="https://www.decathlon.fr/assets/images/decathlon-logo.svg" alt="Decathlon magasin de sport"/>
-        <Title>Which sports could be worth to invest in my city ?</Title>
+        <Title>What sports to invest in ?</Title>
       </div>
 
       <LocationResearch
@@ -60,7 +60,7 @@ const Homepage = () => {
         onLocationChange={setLocation}/>
 
       {!isLoading && !error ? (
-        <SportsMenu sports={sports}/>
+        <SportsRanking sports={sports}/>
       ) : error ?
       (
         <div>
