@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import {ButtonBlue, Input, Form, Label} from '../utils/styles/components';
+import {ButtonBlue, Input, Form, Label} from '../../../utils/styles/components';
 
-const CoordinateSelector = ({ value, onChange }) => {
+const Index = ({ value, onChange }) => {
   const [newValue, setNewValue] = useState(value);
 
   const handleSubmit = event => {
@@ -26,4 +26,4 @@ const CoordinateSelector = ({ value, onChange }) => {
   );
 };
 
-export default CoordinateSelector;
+export default Index;

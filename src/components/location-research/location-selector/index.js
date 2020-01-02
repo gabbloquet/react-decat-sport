@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import {ButtonBlue, Form, Input, Label} from "../utils/styles/components";
+import {ButtonBlue, Form, Input, Label} from "../../../utils/styles/components";
 
-const LocationSelector = ({value, onChange}) => {
+const Index = ({value, onChange}) => {
   const [location, setLocation] = useState(value);
 
   const handleSubmit = event => {
@@ -22,4 +22,4 @@ const LocationSelector = ({value, onChange}) => {
   );
 };
 
-export default LocationSelector;
+export default Index;

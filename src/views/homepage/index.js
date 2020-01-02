@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import LocationResearch from '../Location-research';
-import {feedSports} from '../services/decathlon-sports-api'
-import {loadLocationInformations, locationDataToCoodinates} from '../services/google-maps-api'
-import SportsMenu from '../sports-menu'
-import {Main, SportMiniature, Title} from '../utils/styles/components';
+import LocationResearch from '../../components/location-research';
+import {feedSports} from '../../services/decathlon-sports-api'
+import {loadLocationInformations, locationDataToCoodinates} from '../../services/google-maps-api'
+import SportsMenu from '../../components/sports-menu'
+import {Main, SportMiniature, Title} from '../../utils/styles/components';
 
-const App = () => {
+const Homepage = () => {
   const [isLoading, setIsLoading] = useState();
   const [error, setError] = useState(false);
   const [coordinates, setCoordinates] = useState({ lat: 0, lng: 0 });
@@ -76,4 +76,4 @@ const App = () => {
 
 };
 
-export default App;
+export default Homepage;

@@ -1,7 +1,7 @@
 import React from "react";
-import CoordinateSelector from "./CoordinateSelector";
-import LocationSelector from "./LocationSelector";
-import {LocationCard, Section} from '../utils/styles/components';
+import CoordinateSelector from "./coodinate-selector";
+import LocationSelector from "./location-selector";
+import {LocationCard, Section} from '../../utils/styles/components';
 
 const LocationResearch = ({ coordinates, onCoordinatesChange, location, onLocationChange }) => {
   return (

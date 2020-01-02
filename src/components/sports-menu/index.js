@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import {Cellule, LeftArrow, Menu, ReturnButton, RightArrow, SportLink, SportMiniature} from "../utils/styles/components";
-import {loadSportInformation} from "../services/decathlon-sports-api"
+import {Cellule, LeftArrow, Menu, ReturnButton, RightArrow, SportLink, SportMiniature} from "../../utils/styles/components";
+import {loadSportInformation} from "../../services/decathlon-sports-api"
 
 const SportsMenu = ({sports}) => {
   const [selectedSport, setSelectedSport] = useState();
