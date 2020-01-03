@@ -1,25 +1,24 @@
 import React from "react";
 import {LeftArrow, Menu, ReturnButton, SportMiniature} from "../../../utils/styles/components";
+import List from "../../../utils/components/list";
 
-const SportInformations = ({sport, deselectSport, children}) => {
+const SportInformations = ({children, deselectSport, relatedSports, sport}) => {
   return (
     <Menu>
       <ReturnButton onClick={deselectSport}>
         Retour
         <LeftArrow/>
       </ReturnButton>
-      <h2>{sport.name}</h2>
+
+      <h1>{sport.name}</h1>
       <SportMiniature src={sport.icon}/>
       <p>{sport.description}</p>
-      <h2>Sports enfants : </h2>
-      <ul>
-        {
-          children.map(child => (
-              <li key={child.slug}>{child.name}</li>
-            )
-          )
-        }
-      </ul>
+
+      <h2>Sports associés</h2>
+      <List elements={relatedSports} key={'slug'} field={'name'}/>
+
+      <h2>Sports enfants</h2>
+      <List elements={children} key={'slug'} field={'name'}/>
     </Menu>
   )
 };

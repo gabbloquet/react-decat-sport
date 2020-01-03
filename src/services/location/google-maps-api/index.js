@@ -1,4 +1,6 @@
-import urlConstructor from "../../utils/api-calls/helper";
+import urlConstructor from "../../../utils/api-calls/helper";
+
+const googleApiKey = 'AIzaSyDy8HgQCmtWbEKeHm8kWNY4QIjQCTx6o_A';
 
 const loadLocationInformations = city => {
   const url = urlConstructor(
@@ -7,7 +9,7 @@ const loadLocationInformations = city => {
       apiEndpoint : '/maps/api/geocode/json',
       queryParams : {
         address: city,
-        key: 'AIzaSyDy8HgQCmtWbEKeHm8kWNY4QIjQCTx6o_A'
+        key: googleApiKey
       }
     }
   );
@@ -17,8 +19,4 @@ const loadLocationInformations = city => {
   );
 };
 
-const locationDataToCoodinates = locationData => {
-  return locationData && locationData["results"][0].geometry.location;
-};
-
-export {loadLocationInformations, locationDataToCoodinates};
+export default loadLocationInformations;
