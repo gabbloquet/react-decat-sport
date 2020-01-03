@@ -17,7 +17,7 @@ const Homepage = () => {
     if(coordinates && (coordinates.lat !== 0 || coordinates.lng !== 0)) {
       setIsLoading(true);
       getSports(coordinates)
-        .then(sports => setSports(sports));
+        .then(sports => sports ? setSports(sports) : setError(true));
       setIsLoading(false);
     } else {
       setError(true);
@@ -51,7 +51,7 @@ const Homepage = () => {
       (
         <div>
           <SportMiniature src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Warning_icon.svg/420px-Warning_icon.svg.png"/>
-          <p>Unable to find information from this sport for this location</p>
+          <p>Unable to find sports information for this location</p>
         </div>
       )
       : 'Loading...'
