@@ -3,7 +3,7 @@ import SportsMapper from './mapper';
 
 const getSports = coordinates => {
   return loadSportsInformations(coordinates)
-    .then(data => { SportsMapper(data)});
+    .then(data => SportsMapper(data));
 };
 
 const getSport = sportId => {

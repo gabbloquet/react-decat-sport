@@ -17,9 +17,7 @@ const Homepage = () => {
     if(coordinates && (coordinates.lat !== 0 || coordinates.lng !== 0)) {
       setIsLoading(true);
       getSports(coordinates)
-        .then(sports => {
-          setSports(sports);
-        });
+        .then(sports => setSports(sports));
       setIsLoading(false);
     } else {
       setError(true);
