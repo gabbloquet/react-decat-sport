@@ -5,7 +5,7 @@ const List = ({elements, key, field}) => {
     <ul>
       {
         elements.map(child => (
-            <li key={child[key]}>{child[field]}</li>
+            <li key={child.slug}>{child.name}</li>
           )
         )
       }

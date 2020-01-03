@@ -1,7 +1,6 @@
 import {getSport} from "../../services/sports";
 
 function extractSports(sportsData){
-  console.log(sportsData);
   return sportsData
     .filter(sport => !sport.error)
     .map(({data, data: { attributes }}) => data && attributes);

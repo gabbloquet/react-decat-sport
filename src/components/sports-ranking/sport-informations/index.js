@@ -11,14 +11,17 @@ const SportInformations = ({children, deselectSport, relatedSports, sport}) => {
       </ReturnButton>
 
       <h1>{sport.name}</h1>
-      <SportMiniature src={sport.icon}/>
+      <SportMiniature
+        src={ sport.icon ?
+          sport.icon :
+          'https://toppng.com/uploads/preview/oint-interrogation-point-d-interrogation-115628635697ubaj1toa2.png'}/>
       <p>{sport.description}</p>
 
       <h2>Sports associés</h2>
-      <List elements={relatedSports} key={'slug'} field={'name'}/>
+      <List elements={relatedSports}/>
 
       <h2>Sports enfants</h2>
-      <List elements={children} key={'slug'} field={'name'}/>
+      <List elements={children}/>
     </Menu>
   )
 };
