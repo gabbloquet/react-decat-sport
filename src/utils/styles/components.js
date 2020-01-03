@@ -150,7 +150,7 @@ const SportLink = styled.div`
 
 const ReturnButton = styled(ButtonBlue)`
   width: 100%;
-  height: 2em;
+  height: 2.3em;
   padding: 0;
   padding-right: 1em;
   flex-direction: row-reverse;

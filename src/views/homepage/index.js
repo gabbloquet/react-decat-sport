@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import LocationResearch from '../../components/location-research';
-import {feedSports} from '../../services/decathlon-sports-api'
-import {loadLocationInformations, locationDataToCoodinates} from '../../services/google-maps-api'
+import {getSports} from '../../services/sports'
 import SportsRanking from '../../components/sports-ranking'
 import {Main, SportMiniature, Title} from '../../utils/styles/components';
+import getCoordinates from "../../services/location";
 
 const Homepage = () => {
   const [isLoading, setIsLoading] = useState();
@@ -14,36 +14,22 @@ const Homepage = () => {
 
   useEffect(()  => {
     setError(false);
-    if(coordinates && coordinates.lat !== 0 && coordinates.lng !== 0) {
+    if(coordinates && (coordinates.lat !== 0 || coordinates.lng !== 0)) {
       setIsLoading(true);
-      feedSports(coordinates)
-        .then(sports => {
-          setSports(sports);
-          setIsLoading(false);
-        })
+      getSports(coordinates)
+        .then(sports => setSports(sports));
+      setIsLoading(false);
+    } else {
+      setError(true);
     }
   }, [coordinates]);
 
   useEffect( () => {
     setIsLoading(true);
     setError(false);
-    loadLocationInformations(location)
-      .then( locationData => {
-          if(locationData !== []) {
-            const coordinates = locationDataToCoodinates(locationData);
-            feedSports(coordinates)
-              .then(sports => {
-                if(sports && sports.length > 0)
-                  setSports(sports);
-                else
-                  setError(true);
-                setIsLoading(false);
-              })
-          } else {
-            setError(true);
-          }
-        }
-      )
+
+    getCoordinates(location)
+      .then( coords => setCoordinates(coords));
   },[location]);
 
   return (
@@ -59,7 +45,7 @@ const Homepage = () => {
         location={location}
         onLocationChange={setLocation}/>
 
-      {!isLoading && !error ? (
+      {!isLoading && !error && sports && sports.length > 0 ? (
         <SportsRanking sports={sports}/>
       ) : error ?
       (
