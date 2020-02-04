@@ -1,5 +1,5 @@
 import loadLocationInformations from "./google-maps-api";
-import coordinatesMapper from "./mapper";
+import coordinatesMapper from "./coordinatesMapper";
 
 function getCoordinates(location) {
   return loadLocationInformations(location)

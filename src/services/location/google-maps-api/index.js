@@ -1,4 +1,4 @@
-import urlConstructor from "../../../utils/api-calls/helper";
+import urlConstructor from "../../../utils/api-calls/urlConstructor";
 
 const googleApiKey = 'AIzaSyDy8HgQCmtWbEKeHm8kWNY4QIjQCTx6o_A';
 

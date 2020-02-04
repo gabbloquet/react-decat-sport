@@ -1,4 +1,4 @@
-import urlConstructor from './helper';
+import urlConstructor from './urlConstructor';
 
 describe('Url constructor test', () => {
   const URL_CONFIGURATION = {

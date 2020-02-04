@@ -1,4 +1,4 @@
-import urlConstructor from '../../../utils/api-calls/helper';
+import urlConstructor from '../../../utils/api-calls/urlConstructor';
 
 const baseUrl = 'https://sports.api.decathlon.com';
 

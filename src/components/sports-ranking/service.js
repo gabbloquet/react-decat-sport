@@ -8,7 +8,7 @@ function extractSports(sportsData){
 
 function feedRelatedSports(sport, setRelatedSports){
   if(sport.related.length > 0){
-    Promise.all(sport.related.map(sport => getSport(sport.data.id)))
+    Promise.all(sport.related.map(relatedSport => getSport(relatedSport.data.id)))
       .then(responses => {
         setRelatedSports(extractSports(responses));
       });

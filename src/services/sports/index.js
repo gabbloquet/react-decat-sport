@@ -1,5 +1,5 @@
 import {loadSportInformation, loadSportsInformations} from "./decathlon-sports-api";
-import SportsMapper from './mapper';
+import SportsMapper from './sportMapper';
 
 const getSports = coordinates => {
   return loadSportsInformations(coordinates)
