@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import Homepage from "./views/homepage";
+import Homepage from "./containers/homepage";
 
 ReactDOM.render(<Homepage />, document.getElementById('root'));
 
