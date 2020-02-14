@@ -35,7 +35,6 @@ const Homepage = () => {
   return (
     <Main>
       <div>
-        <img src="https://www.decathlon.fr/assets/images/decathlon-logo.svg" alt="Decathlon magasin de sport"/>
         <Title>What sports to invest in ?</Title>
       </div>
 
