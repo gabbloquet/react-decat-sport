@@ -2,7 +2,7 @@ import urlConstructor from '../../../utils/api-calls/urlConstructor';
 
 const baseUrl = 'https://sports.api.decathlon.com';
 
-const loadSportsInformations = coordinates => {
+const loadRecommandedSports = coordinates => {
   const url = urlConstructor(
     {
       baseUrl : baseUrl,
@@ -30,4 +30,4 @@ const loadSportInformation = sportId => {
   return fetch(url).then(response => response.json());
 };
 
-export {loadSportInformation, loadSportsInformations};
+export {loadSportInformation, loadRecommandedSports};

@@ -31,10 +31,18 @@ const Sidebar = styled.div`
   width: 20%
 `;
 
+const RightAlign = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1em;
+  width: 100%;
+`;
+
 export {
   LocationCard,
   Main,
   Menu,
+  RightAlign,
   Sidebar,
   SportLink
 };

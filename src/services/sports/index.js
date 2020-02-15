@@ -1,8 +1,8 @@
-import {loadSportInformation, loadSportsInformations} from "./decathlon-sports-api";
+import {loadSportInformation, loadRecommandedSports} from "./decathlon-sports-api";
 import SportsMapper from './sportMapper';
 
-const getSports = coordinates => {
-  return loadSportsInformations(coordinates)
+const getRecommandedSports = coordinates => {
+  return loadRecommandedSports(coordinates)
     .then(data => SportsMapper(data));
 };
 
@@ -10,4 +10,4 @@ const getSport = sportId => {
   return loadSportInformation(sportId);
 };
 
-export {getSport, getSports};
+export {getSport, getRecommandedSports};

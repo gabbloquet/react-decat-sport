@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import LocationResearch from '../../components/location-research';
-import {getSports} from '../../services/sports'
+import {getRecommandedSports} from '../../services/sports'
 import SportsRanking from '../../components/sports-ranking'
 import getCoordinates from "../../services/location";
 import Leftbar from "../../components/leftbar";
@@ -8,7 +8,7 @@ import {SportMiniature} from "../../utils/styles/image";
 import {Loader} from "../../utils/styles/loader";
 import {Main} from "../../utils/styles/section";
 
-const SportsIntelligentSearch = () => {
+const RecommendedSportsResearch = () => {
   const [isLoading, setIsLoading] = useState();
   const [error, setError] = useState(false);
   const [coordinates, setCoordinates] = useState({ lat: 0, lng: 0 });
@@ -19,7 +19,7 @@ const SportsIntelligentSearch = () => {
     setError(false);
     if(coordinates && (coordinates.lat !== 0 || coordinates.lng !== 0)) {
       setIsLoading(true);
-      getSports(coordinates)
+      getRecommandedSports(coordinates)
         .then(researchSports => researchSports ? setSports(researchSports) : setError(true));
       setIsLoading(false);
     } else {
@@ -38,8 +38,8 @@ const SportsIntelligentSearch = () => {
   return (
     <Main>
       <Leftbar
-        title='Sports Intelligent Search'
-        description='Given coordinates and/or a search query: the endpoint will return you with a list of relevant sports by searching through: synonyms, lexical champ, tags and descriptions.'/>
+        title='Recommended Sports Research'
+        description="From the coordinates, it'll find the nearest city with valid contextual data and return the most popular sports for your desired application."/>
 
       <LocationResearch
         coordinates={coordinates}
@@ -66,4 +66,4 @@ const SportsIntelligentSearch = () => {
 
 };
 
-export default SportsIntelligentSearch;
+export default RecommendedSportsResearch;

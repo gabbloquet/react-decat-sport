@@ -16,7 +16,15 @@ const Title = styled.h1`
   ${fontFamily};
 `;
 
+const WhiteTitle = styled.h4`
+  font-style: italic;
+  margin: 0;
+  color: ${COLORS.WHITE};
+  ${fontFamily};
+`;
+
 export {
   SectionTitle,
-  Title
+  Title,
+  WhiteTitle
 };
