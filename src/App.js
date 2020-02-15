@@ -1,8 +1,9 @@
 import React from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Homepage from "./containers/homepage";
 import Sidebar from "./containers/topbar";
-import SecondPage from "./containers/secondpage";
+import Homepage from "./containers/homepage";
+import Sports from "./containers/sports";
+import SportPlaces from "./containers/sportplaces";
 
 const App = () => {
   return (
@@ -10,7 +11,8 @@ const App = () => {
       <Sidebar/>
       <Switch>
         <Route path ='/' component={Homepage} exact={true}/>
-        <Route path ='/second' component={SecondPage} exact={true}/>
+        <Route path ='/sports' component={Sports}/>
+        <Route path ='/sportplaces' component={SportPlaces}/>
       </Switch>
     </Router>
   )
