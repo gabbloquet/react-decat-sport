@@ -6,7 +6,7 @@ const Topbar = () => {
     <Navbar>
       <img src="https://www.decathlon.fr/assets/images/decathlon-logo.svg" alt="Decathlon magasin de sport"/>
       <NavLink to='/'>Homepage</NavLink>
-      <NavLink to='/none'>Second page</NavLink>
+      <NavLink to='/second'>Second page</NavLink>
     </Navbar>
   );
 };
