@@ -1,6 +1,8 @@
 import React from "react";
-import {LeftArrow, Menu, ReturnButton, SportMiniature} from "../../../utils/styles/components";
 import List from "../../../utils/components/list";
+import {Menu} from "../../../utils/styles/section";
+import {LeftArrow, ReturnButton} from "../../../utils/styles/button";
+import {SportMiniature} from "../../../utils/styles/image";
 
 const SportInformations = ({children, deselectSport, relatedSports, sport}) => {
   return (

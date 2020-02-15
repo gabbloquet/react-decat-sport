@@ -1,14 +1,15 @@
 import React from "react";
 import CoordinateSelector from "./coodinate-selector";
 import LocationSelector from "./location-selector";
-import {LocationCard, Section} from '../../utils/styles/components';
+import {SectionTitle} from "../../utils/styles/title";
+import {LocationCard} from "../../utils/styles/section";
 
 const LocationResearch = ({ coordinates, onCoordinatesChange, location, onLocationChange }) => {
   return (
     <LocationCard>
-      <Section>By searching with coordinates</Section>
+      <SectionTitle>By searching with coordinates</SectionTitle>
       <CoordinateSelector value={coordinates} onChange={onCoordinatesChange}/>
-      <Section>By searching with location</Section>
+      <SectionTitle>By searching with location</SectionTitle>
       <LocationSelector value={location} onChange={onLocationChange}/>
     </LocationCard>
   );

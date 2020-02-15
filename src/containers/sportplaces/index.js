@@ -1,5 +1,6 @@
 import React from 'react';
-import {Main, Title} from "../../utils/styles/components";
+import {Main} from "../../utils/styles/section";
+import {Title} from "../../utils/styles/title";
 
 const SportPlaces = () => {
   return (

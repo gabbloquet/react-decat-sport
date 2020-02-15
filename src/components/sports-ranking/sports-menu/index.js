@@ -1,5 +1,7 @@
 import React from "react";
-import {Cellule, Menu, RightArrow, SportLink, SportMiniature} from "../../../utils/styles/components";
+import {Menu, SportLink} from "../../../utils/styles/section";
+import {Cellule, RightArrow} from "../../../utils/styles/button";
+import {SportMiniature} from "../../../utils/styles/image";
 
 const SportsMenu = ({sports, selectSport}) => {
 

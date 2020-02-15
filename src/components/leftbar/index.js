@@ -1,5 +1,7 @@
 import React from 'react';
-import {Description, Sidebar, Title} from "../../utils/styles/components";
+import {Sidebar} from "../../utils/styles/section";
+import {Title} from "../../utils/styles/title";
+import {Description} from "../../utils/styles/paragraph";
 
 const Leftbar = ({title, description}) => {
   return (

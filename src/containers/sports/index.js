@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import LocationResearch from '../../components/location-research';
 import {getSports} from '../../services/sports'
 import SportsRanking from '../../components/sports-ranking'
-import {Loader, Main, SportMiniature} from '../../utils/styles/components';
 import getCoordinates from "../../services/location";
 import Leftbar from "../../components/leftbar";
+import {SportMiniature} from "../../utils/styles/image";
+import {Loader} from "../../utils/styles/loader";
+import {Main} from "../../utils/styles/section";
 
 const Sports = () => {
   const [isLoading, setIsLoading] = useState();

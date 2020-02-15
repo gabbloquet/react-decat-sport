@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import {ButtonBlue, Input, Form, Label} from '../../../utils/styles/components';
+import {Form, Input, Label} from "../../../utils/styles/form";
+import {ButtonBlue} from "../../../utils/styles/button";
 
 const Index = ({ value, onChange }) => {
   const [newValue, setNewValue] = useState(value);
