@@ -7,7 +7,11 @@ const loadSportsInformations = coordinates => {
     {
       baseUrl : baseUrl,
       apiEndpoint : '/sports/recommendations/geolocation',
-      queryParams : { coordinates: coordinates.lat + ',' + coordinates.lng }
+      queryParams :
+        {
+          coordinates: coordinates.lat + ',' + coordinates.lng,
+          source: 'popular'
+        }
     }
   );
 

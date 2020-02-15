@@ -10,6 +10,10 @@ const Title = styled.h1`
   ${fontFamily};
 `;
 
+const Description = styled.p`
+  
+`;
+
 const Main = styled.div`
   display: flex;
   justify-content: center;
@@ -219,11 +223,16 @@ const NavLink = styled(Link)`
   }
 `;
 
+const Sidebar = styled.div`
+  width: 20%
+`;
+
 export {
   Button,
   ButtonBlue,
   ButtonYellow,
   Cellule,
+  Description,
   Input,
   Form,
   Label,
@@ -237,6 +246,7 @@ export {
   ReturnButton,
   RightArrow,
   Section,
+  Sidebar,
   SportLink,
   SportMiniature,
   Title

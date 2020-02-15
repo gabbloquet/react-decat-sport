@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import LocationResearch from '../../components/location-research';
 import {getSports} from '../../services/sports'
 import SportsRanking from '../../components/sports-ranking'
-import {Loader, Main, SportMiniature, Title} from '../../utils/styles/components';
+import {Loader, Main, SportMiniature} from '../../utils/styles/components';
 import getCoordinates from "../../services/location";
+import Leftbar from "../../components/leftbar";
 
 const Sports = () => {
   const [isLoading, setIsLoading] = useState();
@@ -34,9 +35,9 @@ const Sports = () => {
 
   return (
     <Main>
-      <div>
-        <Title>What sports to invest in ?</Title>
-      </div>
+      <Leftbar
+        title='What sports to invest in ?'
+        description='sports.api.decathlon.com provides an API that provides a collection of micro services pertaining to sport intelligence as well as data and content related to sports.'/>
 
       <LocationResearch
         coordinates={coordinates}
