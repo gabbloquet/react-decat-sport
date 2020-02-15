@@ -2,7 +2,7 @@ import React from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Sidebar from "./containers/topbar";
 import Homepage from "./containers/homepage";
-import Sports from "./containers/sports";
+import SportsIntelligentSearch from "./containers/sports-intelligent-search";
 import SportPlaces from "./containers/sportplaces";
 
 const App = () => {
@@ -11,7 +11,7 @@ const App = () => {
       <Sidebar/>
       <Switch>
         <Route path ='/' component={Homepage} exact={true}/>
-        <Route path ='/sports' component={Sports}/>
+        <Route path ='/sports' component={SportsIntelligentSearch}/>
         <Route path ='/sportplaces' component={SportPlaces}/>
       </Switch>
     </Router>

@@ -8,7 +8,7 @@ import {SportMiniature} from "../../utils/styles/image";
 import {Loader} from "../../utils/styles/loader";
 import {Main} from "../../utils/styles/section";
 
-const Sports = () => {
+const SportsIntelligentSearch = () => {
   const [isLoading, setIsLoading] = useState();
   const [error, setError] = useState(false);
   const [coordinates, setCoordinates] = useState({ lat: 0, lng: 0 });
@@ -38,8 +38,8 @@ const Sports = () => {
   return (
     <Main>
       <Leftbar
-        title='What sports to invest in ?'
-        description='sports.api.decathlon.com provides an API that provides a collection of micro services pertaining to sport intelligence as well as data and content related to sports.'/>
+        title='Sports Intelligent Search'
+        description='Given coordinates and/or a search query: the endpoint will return you with a list of relevant sports by searching through: synonyms, lexical champ, tags and descriptions.'/>
 
       <LocationResearch
         coordinates={coordinates}
@@ -66,4 +66,4 @@ const Sports = () => {
 
 };
 
-export default Sports;
+export default SportsIntelligentSearch;

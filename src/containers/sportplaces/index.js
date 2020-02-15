@@ -1,11 +1,13 @@
 import React from 'react';
 import {Main} from "../../utils/styles/section";
-import {Title} from "../../utils/styles/title";
+import Leftbar from "../../components/leftbar";
 
 const SportPlaces = () => {
   return (
     <Main>
-      <Title>Hey, i'm the sport places page ! </Title>
+      <Leftbar
+        title='Sport Places'
+        description='Find all the sport places meeting specific criterias.'/>
     </Main>
   );
 };
