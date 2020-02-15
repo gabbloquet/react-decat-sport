@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import LocationResearch from '../../components/location-research';
 import {getRecommandedSports} from '../../services/sports'
-import SportsRanking from '../../components/sports-ranking'
 import getCoordinates from "../../services/location";
 import Leftbar from "../../components/leftbar";
-import {SportMiniature} from "../../utils/styles/image";
-import {Loader} from "../../utils/styles/loader";
 import {Main} from "../../utils/styles/section";
+import RightBar from "../../components/rightbar";
 
-const RecommendedSportsResearch = () => {
+const RecommendedSports = () => {
   const [isLoading, setIsLoading] = useState();
   const [error, setError] = useState(false);
   const [coordinates, setCoordinates] = useState({ lat: 0, lng: 0 });
@@ -47,23 +45,15 @@ const RecommendedSportsResearch = () => {
         location={location}
         onLocationChange={setLocation}/>
 
-      {!isLoading && !error && sports && sports.length > 0 ? (
-        <SportsRanking sports={sports}/>
-      ) : error ?
-      (
-        <div>
-          <SportMiniature src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Warning_icon.svg/420px-Warning_icon.svg.png"/>
-          <p>Unable to find sports information for this location</p>
-        </div>
-      ) :
-        <div>
-          <Loader/>
-        </div>
-      }
+      <RightBar
+        isLoading={isLoading}
+        sports={sports}
+        error={error}
+      />
     </Main>
   );
 
 
 };
 
-export default RecommendedSportsResearch;
+export default RecommendedSports;
