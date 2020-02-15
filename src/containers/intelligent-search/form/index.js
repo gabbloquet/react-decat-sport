@@ -29,7 +29,7 @@ const IntelligentSearchForm = ({setSports, setIsLoading, setError}) => {
     } else {
       setError(true);
     }
-  }, [coordinates]);
+  }, [coordinates, query]);
 
   return (
     <React.Fragment>
