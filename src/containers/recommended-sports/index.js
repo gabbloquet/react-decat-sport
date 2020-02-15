@@ -3,7 +3,7 @@ import LocationResearch from '../../components/location-research';
 import {getRecommandedSports} from '../../services/sports'
 import getCoordinates from "../../services/location";
 import Leftbar from "../../components/leftbar";
-import {Main} from "../../utils/styles/section";
+import {Main, MainContent} from "../../utils/styles/section";
 import RightBar from "../../components/rightbar";
 
 const RecommendedSports = () => {
@@ -39,11 +39,13 @@ const RecommendedSports = () => {
         title='Recommended Sports Research'
         description="From the coordinates, it'll find the nearest city with valid contextual data and return the most popular sports for your desired application."/>
 
-      <LocationResearch
-        coordinates={coordinates}
-        onCoordinatesChange={setCoordinates}
-        location={location}
-        onLocationChange={setLocation}/>
+      <MainContent>
+        <LocationResearch
+          coordinates={coordinates}
+          onCoordinatesChange={setCoordinates}
+          location={location}
+          onLocationChange={setLocation}/>
+      </MainContent>
 
       <RightBar
         isLoading={isLoading}

@@ -8,7 +8,6 @@ const Form = styled.form`
   padding: 1em;
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
   ${fontFamily};
 `;
 

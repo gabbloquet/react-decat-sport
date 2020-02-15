@@ -2,10 +2,8 @@ import styled from "styled-components";
 import { COLORS, fontFamily } from './assets';
 
 const SectionTitle = styled.h1`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: 2em;
+  margin-top: 1em;
+  text-align: center;
   ${fontFamily};
 `;
 
@@ -23,8 +21,13 @@ const WhiteTitle = styled.h4`
   ${fontFamily};
 `;
 
+const StepTitle = styled(Title)`
+  justify-content: center;
+`;
+
 export {
   SectionTitle,
+  StepTitle,
   Title,
   WhiteTitle
 };

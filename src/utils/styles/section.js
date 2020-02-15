@@ -11,13 +11,11 @@ const Main = styled.div`
 
 const Menu = styled.div`
   ${fontFamily};
-  width: 35%;
+  width: 20%;
 `;
 
 const LocationCard = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-content: start;
+  flex-direction: column;
   ${fontFamily};
 `;
 
@@ -36,11 +34,23 @@ const Links = styled.div`
   width: 100%;
 `;
 
+const Step = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+`;
+
+const MainContent = styled.div`
+  width: 100%;
+`;
+
 export {
   Links,
   LocationCard,
   Main,
+  MainContent,
   Menu,
   Sidebar,
-  SportLink
+  SportLink,
+  Step
 };
