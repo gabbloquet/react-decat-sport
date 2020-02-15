@@ -1,17 +1,13 @@
 import React, {useState} from "react";
 import {Main, MainContent} from "../../utils/styles/section";
 import Leftbar from "../../components/leftbar";
-import LocationResearch from "../../components/location-research";
 import RightBar from "../../components/rightbar";
 import IntelligentSearchForm from "./form";
-import {Title} from "../../utils/styles/title";
 
 const IntelligentSearch = () => {
   const [isLoading, setIsLoading] = useState();
   const [error, setError] = useState(false);
-  const [coordinates, setCoordinates] = useState({ lat: 0, lng: 0 });
   const [sports, setSports] = useState([]);
-  const [location, setLocation] = useState("Lille");
 
   return (
     <Main>
@@ -21,13 +17,15 @@ const IntelligentSearch = () => {
 
       <MainContent>
         <IntelligentSearchForm
-          setSports={setSports}/>
+          setIsLoading={setIsLoading}
+          setSports={setSports}
+          setError={setError}/>
       </MainContent>
 
-        <RightBar
-          isLoading={isLoading}
-          sports={sports}
-          error={error}/>
+      <RightBar
+        isLoading={isLoading}
+        sports={sports}
+        error={error}/>
     </Main>
   );
 };

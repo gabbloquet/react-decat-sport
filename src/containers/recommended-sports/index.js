@@ -13,6 +13,14 @@ const RecommendedSports = () => {
   const [sports, setSports] = useState([]);
   const [location, setLocation] = useState("Lille");
 
+  useEffect( () => {
+    setIsLoading(true);
+    setError(false);
+
+    getCoordinates(location)
+      .then( coords => setCoordinates(coords));
+  },[location]);
+
   useEffect(()  => {
     setError(false);
     if(coordinates && (coordinates.lat !== 0 || coordinates.lng !== 0)) {
@@ -24,14 +32,6 @@ const RecommendedSports = () => {
       setError(true);
     }
   }, [coordinates]);
-
-  useEffect( () => {
-    setIsLoading(true);
-    setError(false);
-
-    getCoordinates(location)
-      .then( coords => setCoordinates(coords));
-  },[location]);
 
   return (
     <Main>
@@ -50,8 +50,7 @@ const RecommendedSports = () => {
       <RightBar
         isLoading={isLoading}
         sports={sports}
-        error={error}
-      />
+        error={error}/>
     </Main>
   );
 

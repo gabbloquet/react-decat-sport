@@ -30,4 +30,19 @@ const loadSportInformation = sportId => {
   return fetch(url).then(response => response.json());
 };
 
-export {loadSportInformation, loadRecommandedSports};
+const loadSportsWithIntelligentSearch = (query, coordinates) => {
+  const url = urlConstructor(
+    {
+      baseUrl : baseUrl,
+      apiEndpoint : '/sports/search/' + query,
+      queryParams :
+        {
+          coordinates: coordinates.lat + ',' + coordinates.lng
+        }
+    }
+  );
+
+  return fetch(url).then(response => response.json());
+};
+
+export {loadRecommandedSports, loadSportInformation, loadSportsWithIntelligentSearch};

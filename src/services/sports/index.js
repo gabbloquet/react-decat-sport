@@ -1,4 +1,4 @@
-import {loadSportInformation, loadRecommandedSports} from "./decathlon-sports-api";
+import {loadRecommandedSports, loadSportInformation, loadSportsWithIntelligentSearch} from "./decathlon-sports-api";
 import SportsMapper from './sportMapper';
 
 const getRecommandedSports = coordinates => {
@@ -10,4 +10,9 @@ const getSport = sportId => {
   return loadSportInformation(sportId);
 };
 
-export {getSport, getRecommandedSports};
+const getSportsWithIntelligentSearch = (query, coordinates) => {
+  return loadSportsWithIntelligentSearch(query, coordinates)
+    .then(data => SportsMapper(data));
+};
+
+export {getSport, getRecommandedSports, getSportsWithIntelligentSearch};
