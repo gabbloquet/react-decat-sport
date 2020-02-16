@@ -10,9 +10,10 @@ const Topbar = () => {
       <WhiteTitle>Sports App</WhiteTitle>
       <Links>
         <NavLink to='/'>Homepage</NavLink>
+        <NavLink to='/sports'>Sports</NavLink>
         <NavLink to='/recommended-sports'>Recommended Sports</NavLink>
         <NavLink to='/intelligent-search'>Intelligent Search</NavLink>
-        <NavLink to='/sport-places'>Sport places</NavLink>
+        <NavLink to='/groups'>Groups</NavLink>
       </Links>
     </Navbar>
   );

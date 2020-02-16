@@ -1,4 +1,10 @@
-import {loadRecommandedSports, loadSportInformation, loadSportsWithIntelligentSearch} from "./decathlon-sports-api";
+import {
+  loadGroups,
+  loadRecommandedSports,
+  loadSportInformation,
+  loadSports,
+  loadSportsWithIntelligentSearch
+} from "./decathlon-sports-api";
 import SportsMapper from './sportMapper';
 
 const getRecommandedSports = coordinates => {
@@ -10,9 +16,23 @@ const getSport = sportId => {
   return loadSportInformation(sportId);
 };
 
+const getSports = (tag) => {
+  return loadSports(tag);
+};
+
+const getGroups = () => {
+  return loadGroups();
+};
+
 const getSportsWithIntelligentSearch = (query, coordinates) => {
   return loadSportsWithIntelligentSearch(query, coordinates)
     .then(data => SportsMapper(data));
 };
 
-export {getSport, getRecommandedSports, getSportsWithIntelligentSearch};
+export {
+  getGroups,
+  getSport,
+  getSports,
+  getRecommandedSports,
+  getSportsWithIntelligentSearch
+};

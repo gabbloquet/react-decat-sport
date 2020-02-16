@@ -2,6 +2,21 @@ import urlConstructor from '../../../utils/api-calls/urlConstructor';
 
 const baseUrl = 'https://sports.api.decathlon.com';
 
+const loadSports = tag => {
+  const url = urlConstructor(
+    {
+      baseUrl : baseUrl,
+      apiEndpoint : '/sports',
+      queryParams :
+        {
+          tag: tag
+        }
+    }
+  );
+
+  return fetch(url).then(response => response.json());
+};
+
 const loadRecommandedSports = coordinates => {
   const url = urlConstructor(
     {
@@ -45,4 +60,21 @@ const loadSportsWithIntelligentSearch = (query, coordinates) => {
   return fetch(url).then(response => response.json());
 };
 
-export {loadRecommandedSports, loadSportInformation, loadSportsWithIntelligentSearch};
+const loadGroups = () => {
+  const url = urlConstructor(
+    {
+      baseUrl : baseUrl,
+      apiEndpoint : '/groups'
+    }
+  );
+
+  return fetch(url).then(response => response.json());
+};
+
+export {
+  loadGroups,
+  loadRecommandedSports,
+  loadSportInformation,
+  loadSports,
+  loadSportsWithIntelligentSearch
+};

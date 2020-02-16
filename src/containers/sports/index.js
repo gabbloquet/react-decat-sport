@@ -3,12 +3,12 @@ import {Main, MainContent} from "../../utils/styles/section";
 import Leftbar from "../../components/leftbar";
 import RightBar from "../../components/rightbar";
 
-const SportPlaces = () => {
+const Sports = () => {
   return (
     <Main>
       <Leftbar
-        title='Sport Places'
-        description='Find all the sport places meeting specific criterias.'/>
+        title='Sports'
+        description='A detailled collection of all the sports in our database.'/>
 
       <MainContent>
         <img src='https://www.lightingparis.fr/wp-content/uploads/2016/12/en-cours-de-construction.jpg' alt='Construction'/>
@@ -19,4 +19,4 @@ const SportPlaces = () => {
   );
 };
 
-export default SportPlaces;
+export default Sports;

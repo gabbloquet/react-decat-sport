@@ -34,14 +34,12 @@ const IntelligentSearchForm = ({setSports, setIsLoading, setError}) => {
   return (
     <React.Fragment>
       <Step>
-        <StepTitle>Step 1</StepTitle>
         <QueryResearch
           value={query}
           onChange={setQuery}/>
       </Step>
 
       <Step>
-        <StepTitle>Step 2</StepTitle>
         <LocationResearch
           coordinates={coordinates}
           onCoordinatesChange={setCoordinates}
