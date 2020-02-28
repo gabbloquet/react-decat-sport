@@ -6,7 +6,6 @@ import RecommendedSports from "./containers/recommended-sports";
 import Sports from "./containers/sports";
 import IntelligentSearch from "./containers/intelligent-search";
 import Groups from "./containers/groups";
-import AutoComplete from "./containers/autocomplete";
 
 const App = () => {
   return (
@@ -19,7 +18,6 @@ const App = () => {
         <Route path ='/intelligent-search' component={IntelligentSearch}/>
         <Route path ='/groups' component={Groups}/>
       </Switch>
-      {/*<AutoComplete/>*/}
     </Router>
   )
 };

@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import LocationResearch from "../../../components/location-research";
 import QueryResearch from "../../../components/query-research";
 import {Step} from "../../../utils/styles/section";
-import {StepTitle} from "../../../utils/styles/title";
 import getCoordinates from "../../../services/location";
 import {getSportsWithIntelligentSearch} from "../../../services/sports";
 
