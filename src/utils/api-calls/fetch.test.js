@@ -2,7 +2,7 @@ import urlConstructor from './urlConstructor';
 
 describe('Url constructor test', () => {
   const URL_CONFIGURATION = {
-    baseUrl: 'https://myBaseUrl',
+    baseUrl: 'https://mybaseurl',
     apiEndpoint: '/this/is/an/api/end_point',
     queryParams: {
       stores: 8000,
@@ -12,16 +12,15 @@ describe('Url constructor test', () => {
 
   it('should receive variables and return a url with endpoint', () => {
     const { baseUrl, apiEndpoint } = URL_CONFIGURATION;
-    const expected = `${baseUrl}${apiEndpoint}`;
+    const expected = 'https://mybaseurl/this/is/an/api/end_point';
 
-    expect(urlConstructor({ baseUrl, apiEndpoint })).toEqual(expected);
+    expect(expected.includes(urlConstructor({ baseUrl, apiEndpoint }))).toBe(true);
   });
 
   it('should receive variables and return a url with endpoint and parameters', () => {
     const { baseUrl, apiEndpoint, queryParams } = URL_CONFIGURATION;
+    const expected = 'https://mybaseurl/this/is/an/api/end_point?stores=8000&lastYear=true';
 
-    const expected = `${baseUrl}${apiEndpoint}?stores=${queryParams.stores}&lastYear=${queryParams.lastYear}`;
-
-    expect(urlConstructor({ baseUrl, apiEndpoint, queryParams })).toEqual(expected);
+    expect(expected.includes(urlConstructor({ baseUrl, apiEndpoint, queryParams }))).toBe(true);
   });
 });
