@@ -37,6 +37,10 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## Run Sonar Analysis
+```
+sonar-scanner -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=dktunited -Dsonar.login=INSERT_HERE_YOUR_TOKEN -Dsonar.projectKey=dktunited_react-decat-sport -Dsonar.projectName=react-decat-sport -Dsonar.coverage.exclusions="src/*.js,src/components/**/*.js,src/containers/**/*.js,src/test/*.js"
+```
 ## Learn More
 
 You can learn more in the [Create React Application documentation](https://facebook.github.io/create-react-app/docs/getting-started).
