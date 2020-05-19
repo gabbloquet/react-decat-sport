@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@komposit/ui-kit": "^1.0.3",
-    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/jest-dom": "^5.7.0",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^10.3.1",
     "@ungap/url-search-params": "^0.2.0",
