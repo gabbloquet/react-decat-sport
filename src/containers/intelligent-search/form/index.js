@@ -8,7 +8,7 @@ import {getSportsWithIntelligentSearch} from "../../../services/sports";
 const IntelligentSearchForm = ({setSports, setIsLoading, setError}) => {
   const [coordinates, setCoordinates] = useState({ lat: 0, lng: 0 });
   const [location, setLocation] = useState("Lille");
-  const [query, setQuery] = useState("Run");
+  const [query, setQuery] = useState("Water");
 
   useEffect( () => {
     setIsLoading(true);
