@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@komposit/ui-kit": "^2.0.1",
+    "@komposit/ui-kit": "^2.0.5",
     "@testing-library/jest-dom": "^5.9.0",
     "@testing-library/react": "^10.2.0",
     "@testing-library/user-event": "^11.1.0",
