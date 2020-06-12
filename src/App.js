@@ -1,5 +1,7 @@
 import React from 'react'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import '@decathlon/design-system/css/styles.css';
+import '@decathlon/design-system/icons/dkt-icons.css';
 import Topbar from "./components/topbar";
 import Homepage from "./containers/homepage";
 import RecommendedSports from "./containers/recommended-sports";
