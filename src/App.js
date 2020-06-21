@@ -3,11 +3,12 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import '@decathlon/design-system/css/styles.css';
 import '@decathlon/design-system/icons/dkt-icons.css';
 import Topbar from "./components/topbar";
-import Homepage from "./containers/homepage";
-import RecommendedSports from "./containers/recommended-sports";
-import Sports from "./containers/sports";
-import IntelligentSearch from "./containers/intelligent-search";
-import Groups from "./containers/groups";
+import Homepage from "./views/homepage";
+import Sports from "./views/sports";
+import RecommendedSports from "./views/recommended-sports";
+import IntelligentSearch from "./views/intelligent-search";
+import Groups from "./views/groups";
+
 
 const App = () => {
   return (

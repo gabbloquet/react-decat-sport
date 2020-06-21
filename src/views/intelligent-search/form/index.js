@@ -16,7 +16,7 @@ const IntelligentSearchForm = ({setSports, setIsLoading, setError}) => {
 
     getCoordinates(location)
       .then( coords => setCoordinates(coords));
-  },[location]);
+  },[location, setError, setIsLoading]);
 
   useEffect(()  => {
     setError(false);
@@ -28,7 +28,7 @@ const IntelligentSearchForm = ({setSports, setIsLoading, setError}) => {
     } else {
       setError(true);
     }
-  }, [coordinates, query]);
+  }, [coordinates, query, setError, setIsLoading, setSports]);
 
   return (
     <React.Fragment>
