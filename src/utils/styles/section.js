@@ -3,6 +3,7 @@ import { COLORS, fontFamily } from './assets';
 
 const Main = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   color: ${COLORS.BLACK_80};
   background-color: ${COLORS.WHITE};
