@@ -1,0 +1,15 @@
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 50%;
+}
+
+label, .submit-button {
+    margin-top: 1em;
+}
