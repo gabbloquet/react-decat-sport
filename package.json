@@ -7,7 +7,7 @@
     "@komposit/ui-kit": "^2.0.8",
     "@testing-library/jest-dom": "^5.11.0",
     "@testing-library/react": "^10.4.4",
-    "@testing-library/user-event": "^12.0.11",
+    "@testing-library/user-event": "^12.0.12",
     "@ungap/url-search-params": "^0.2.2",
     "eslint-plugin-react-hooks": "^4.0.7",
     "react": "^16.13.1",
