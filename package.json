@@ -12,7 +12,7 @@
     "eslint-plugin-react-hooks": "^4.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-hook-form": "^6.7.0",
+    "react-hook-form": "^6.7.1",
     "react-scripts": "3.4.3",
     "styled-components": "^5.1.1"
   },
